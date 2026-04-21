@@ -1,8 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
-import kotlin.apply
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -61,7 +58,8 @@ buildkonfig {
     packageName = "com.reza.multipress"
 
     defaultConfigs {
-        buildConfigField(FieldSpec.Type.STRING, "apiKey", apiKey)
+        buildConfigField(FieldSpec.Type.STRING, "NEWS_API_KEY", apiKey)
+        buildConfigField(FieldSpec.Type.STRING, "BASE_URL", "https://newsapi.org/v2/")
     }
 }
 
