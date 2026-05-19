@@ -2,11 +2,13 @@ package com.reza.multipress.data.repository
 
 import com.reza.multipress.data.model.NewsResponse
 import com.reza.multipress.data.remote.ApiService
+import com.reza.multipress.system.DeviceLocale
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 
 class DefaultNewsRepository(
-    private val apiService: ApiService
+    private val apiService: ApiService,
+    private val deviceLocale: DeviceLocale
 ) : NewsRepository {
 
     private var cachedRates: NewsResponse? = null
